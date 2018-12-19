@@ -1,7 +1,7 @@
 #include<stdio.h>
+#include <stdbool.h>   //添加头文件支持bool类型
 #include<malloc.h>
-#include<stdlib.h>
-
+#include<stdlib.h>    //use exit() function
 
 struct Array{
     int* pBase;     //the first element pointer of array
@@ -23,12 +23,18 @@ bool is_full(struct Array* pArr);
 int main(void){
     
     struct Array arr;
-
+    init_arr(&arr, 6);
+    append_arr(&arr, 1);
+    append_arr(&arr, 2);
+    append_arr(&arr, 3);
+    
+    show_arr(&arr);
+    
     return 0;
 }
 
 void init_arr(struct Array* pArr, int length){
-
+    
     pArr->pBase = (int *)malloc(sizeof(int)*length);
     if(NULL == pArr->pBase){
         printf("initional error!\n");
@@ -56,21 +62,20 @@ bool is_full(struct Array* pArr){
 
 void show_arr(struct Array* pArr){
     if( is_empty(pArr) )
-      printf("the array is empty");
-
+        printf("the array is empty");
+    
     for(int i = 0;i < pArr->cnt;i++)
-      printf("%d ", pArr->pBase[i]);
-
+        printf("%d ", pArr->pBase[i]);
+    
     printf("\n");
 }
 
 bool append_arr(struct Array* pArr, int val){
     if( is_full(pArr) )
-      printf("the array is full");
-
+        printf("the array is full");
+    
     pArr->pBase[pArr->cnt] = val;
     pArr->cnt++;
     
+    return true;
 }
-
-
