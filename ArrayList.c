@@ -8,6 +8,8 @@
 
 #include<stdio.h>
 #include <stdbool.h>   //添加头文件支持bool类型
+#include<malloc.h>
+#include<stdlib.h>     //use the exit() function
 
 
 struct Array{
