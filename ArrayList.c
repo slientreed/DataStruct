@@ -1,13 +1,7 @@
 #include<stdio.h>
-<<<<<<< HEAD
-#include<stdlib.h>
-#include <stdbool.h>
-=======
 #include <stdbool.h>   //添加头文件支持bool类型
 #include<malloc.h>
 #include<stdlib.h>     //use the exit() function
->>>>>>> 8c3043a9072570382adf74902ce730400a3a424e
-
 
 struct Array{
     int* pBase;     //the first element pointer of array
