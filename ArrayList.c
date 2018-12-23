@@ -12,7 +12,7 @@ struct Array{
 void init_arr(struct Array* pArr, int length);
 bool append_arr(struct Array* pArr, int val);
 
-//insert_arr
+bool insert_arr(struct Array* pArr, int val);
 //delete_arr
 void show_arr(struct Array* pArr);
 bool is_empty(struct Array* pArr);
@@ -78,4 +78,11 @@ bool append_arr(struct Array* pArr, int val){
     pArr->cnt++;
     
     return true;
+}
+
+bool insert_arr(struct Array* pArr, int val){
+    if( is_empty(pArr) )
+      printf("the array is empty!");
+
+
 }
